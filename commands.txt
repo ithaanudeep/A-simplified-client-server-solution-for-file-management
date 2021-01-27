@@ -1,0 +1,37 @@
+THESE ARE THE AVAILABLE COMMANDS USED:
+
+1.change_folder <name>:
+	Move the current working directory for the current user to the specified folder residing in the current folder.
+	If the <name> does not point to a folder in the current working directory,
+	the request is to be denied with a proper message highlighting the error for the user.
+
+2.list:
+	Prints all the files in the current working directory with their size and date of modification.
+
+3.read_file<name>:
+	Read data from the file <name> in the current working directory for the user issuing the request and return
+	the first hundred characters in it. Each subsequent call by the same client is to return the next hundred
+	characters in the file, up until all characters are read. If a file with the specified <name> does not exist
+	in the current working directory for the user, the request is to be denied with a proper message highlighting
+	the error for the user. 
+
+4.write_file<name><input>:
+	Write the data in <input> to the end of the file <name> in the current working directory for the user issuing
+	the request, starting on a new line.  If no file exists with the given <name>, a new file is to be created
+	in the current working directory for the user.
+5.create_folder<name>:
+	Create a new folder with the specified <name> in the current working directory for the user issuing the request.
+	If a folder with the given name already exists, the request is to be denied with a proper message highlighting the error
+	for the user.
+
+6.register<username><password><privileges>:
+	Register a new user with username and password. If the username or password already exists then it returns an error.
+	<privileges> can either be a user or an admin.
+
+7.login<username><password>:
+	Log in the user conforming with <username> onto the server if the <password> provided matches the password used while
+	registering. If the <password> does not match or if the <username> does not exist, an error message should be returned
+	to the request for the client to present to the user.
+
+8.Quit:
+	Logout the user, close the connection to the server, and close the application.
